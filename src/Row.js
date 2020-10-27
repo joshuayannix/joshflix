@@ -7,14 +7,13 @@ const base_url = 'https://image.tmdb.org/t/p/original/';
 
 function Row({ title, fetchUrl, isLargeRow }) {
 
-
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
-      //console.log(request)
+      console.log(request)
       return request;
     }
     fetchData();
@@ -44,13 +43,16 @@ function Row({ title, fetchUrl, isLargeRow }) {
           /> */
           <Movie 
             key={movie.id}
-            title={movie.name}           
+            title={movie.title}           
             imageSrc={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
             overview={movie.overview}
             releaseDate={movie.release_date}
             backdropImage={movie.backdrop_path}
             mediaType={movie.media_type}
             rating={movie.vote_average}
+            backdrop={`${base_url}${movie.backdrop_path}`}
+            firstAirDate={movie.first_air_date}
+            name={movie.name}
           />
           
         ))}
