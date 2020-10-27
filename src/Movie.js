@@ -24,9 +24,9 @@ function Movie({ title, imageSrc, overview, releaseDate, mediaType, rating }) {
           </div>
 
           <div className="movie__modal__details__rightColumn">
-            <div>{releaseDate}</div>
-            <div>{mediaType}</div>
-            <div>{rating}</div>
+            <div>Released: {releaseDate}</div>
+            <div>Type: {mediaType}</div>
+            <div>Rating: {rating}</div>
           </div>
 
         </div>     
