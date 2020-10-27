@@ -12,3 +12,7 @@
 .movie__poster:hover {
   transform: scale(1.08);
 }
+
+.movie__modal__image {
+  width: 200px;
+}

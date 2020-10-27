@@ -46,6 +46,11 @@ function Row({ title, fetchUrl, isLargeRow }) {
             key={movie.id}
             title={movie.name}           
             imageSrc={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+            overview={movie.overview}
+            releaseDate={movie.release_date}
+            backdropImage={movie.backdrop_path}
+            mediaType={movie.media_type}
+            rating={movie.vote_average}
           />
           
         ))}
