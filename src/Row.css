@@ -34,3 +34,7 @@
 .row__posterLarge:hover {
   transform: scale(1.08);
 }
+
+.row__modal__image{
+  width: 200px;
+}
