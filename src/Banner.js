@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import axios from './axios';
 import requests from './requests';
 import './Banner.css';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import { Icon } from '@material-ui/core';
+
 
 const base_url = 'https://image.tmdb.org/t/p/original/';
 
@@ -33,7 +36,7 @@ function Banner() {
         backgroundImage: `url(
           "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
         )`,
-        backgroundPosition: 'center center'    
+        backgroundPosition: '50% 0%',
       }}
     >
       <div className="banner__contents">
@@ -43,7 +46,14 @@ function Banner() {
         </h1>
 
         <div className="banner__buttons">
-          <button className="banner__button">Play</button>
+          
+          <button className="banner__button">
+            <Icon>
+              <PlayArrowIcon/>
+            </Icon>
+              Play
+          </button>
+
           <button className="banner__button">My List</button>
         </div>
           

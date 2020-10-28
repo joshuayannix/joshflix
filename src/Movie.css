@@ -5,8 +5,8 @@
   margin-right: 10px;
   transition: transform 450ms;
   cursor: pointer;
-  border: 2px solid grey;
-  border-radius: 15px;
+  border: 2px solid rgba(0,0,0,0.3);
+  border-radius: 10px;
 }
 
 .movie__poster:hover {
@@ -32,7 +32,7 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-
+  min-width: 436px;
 }
 
 .movie__modal__titleSection {
@@ -50,7 +50,7 @@
 }
 
 .movie__modal__details__leftColumn{
-  width: 50%;
+  width: 40%;
   font-size: 18px;
   padding: 20px;
   display: flex;
@@ -61,17 +61,71 @@
 }  
 
 .movie__modal__details__rightColumn{
-  width: 50%;
-  font-size: 20px;
+  width: 60%;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: #141414;
+  padding: 10px;
 }
 
 .movie__modal__title {
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   font-weight: 800;
   padding-bottom: 0.3rem;
+}
+
+.movie__modal__description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.movie__modal__buttons {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.movie__modal__buttons button{
+  cursor: pointer;
+  color: black;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  background-color: white;
+  height: 2.5rem;
+  width: 3rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie__modal__buttons button:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s;
+}
+
+#play{
+  background: white;
+  width: 6rem;
+}
+
+#play:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s;
 }
