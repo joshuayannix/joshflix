@@ -11,7 +11,14 @@
 }
 
 .row__posters::-webkit-scrollbar {
-  display: none;
+  border-radius: 20px;
+  background: rgba(186, 186, 186, 0.509);
+  
+}
+.row__posters::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.43);
+  border: 1px grey;
+  border-radius: 20px;
 }
 
 .row__poster {
