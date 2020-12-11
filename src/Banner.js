@@ -5,9 +5,6 @@ import './Banner.css';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { Icon } from '@material-ui/core';
 
-
-const base_url = 'https://image.tmdb.org/t/p/original/';
-
 function Banner() {
   const [movie, setMovie] = useState([]);
 

@@ -19,16 +19,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]);
   
-  const opts = {
-    height: '390',
-    width: '100%',
-    playerVars: {
-      autoplay: 1
-    },
-  };
-
-
-
   return (
     <div className='row'>
       <h2>{title}</h2>

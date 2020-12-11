@@ -18,7 +18,7 @@ function Movie({ title, imageSrc, overview, releaseDate, mediaType, rating, back
     <Modal open={open} onClose={handleClose} className='movie__modal'>
       <div className='movie__modal__container'>
 
-        <img className='movie__modal__image'src={backdrop}/>
+        <img className='movie__modal__image'src={backdrop} alt='movie modal'/>
 
         <div className="movie__modal__titleSection">
           <div className='movie__modal__title'>{title ? title : name}</div>
