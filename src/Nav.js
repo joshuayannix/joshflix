@@ -56,7 +56,10 @@ function Nav() {
           <div></div>
         )}
         
-        <Link to={!user && '/login'} className='nav__link'>
+        <Link 
+          to={!user && '/login'} 
+          className={show ? 'nav__link__white' : 'nav__link__black'}
+        >
           <div 
             onClick={handleAuthentication}
             className="header__option"
