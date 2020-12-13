@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './Nav.css';
 import joshflix from './joshflix.png';
+import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
+import { Link } from 'react-router-dom';
 
 function Nav() {
+  const user = useSelector(selectUser);
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  }
 
   const [show, handleShow] = useState(false);
 
@@ -18,16 +29,18 @@ function Nav() {
   }, []);
 
   return (
-    <div className={`nav ${show && 'nav__black'}`}>      
-      <img 
-        src={joshflix}
-        alt='netflix logo'
-        className='nav__logo'        
-      />
-      <img 
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/366be133850498.56ba69ac36858.png" alt="netflix profile icon"
-        className='nav__avatar'
-      />
+    <div className={`nav ${show && 'nav__black'}`}>     
+
+      <Link to='/'>      
+        <img  
+          className='nav__logo' 
+          src={joshflix} 
+          alt="amazon logo"
+        />
+      </Link> 
+
+      
+      
     </div>
   )
 }

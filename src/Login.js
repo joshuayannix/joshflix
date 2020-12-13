@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.css'
+import joshflix from './joshflix.png';
 import { Link, useHistory } from 'react-router-dom';
 import { auth, provider } from './firebase';
 
@@ -17,13 +18,21 @@ function Login() {
   }
 
   return (
-    <div className='login'>
-      <Link to ='/'>
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png" alt="amazon logo"
-          className='login__logo'
-        />
-      </Link>
+    <div className='login' >
+      <div className="overlay">
+
+      </div>
+
+      <div className='login__header'>
+        <Link to ='/'>
+            <img 
+              src={joshflix} 
+              alt="joshflix logo"
+              className='login__logo'
+            />                
+        </Link>
+      </div>  
+
       <div className="login__container">
         <h1>Sign In</h1>
         <form action="">          
@@ -32,12 +41,9 @@ function Login() {
             onClick={signIn}
             type='submit'
           >
-            Sign In
+            Sign In With Google
           </button>
         </form>
-
-        <p>By continuing, you agree to the Conditions of Use and Privacy Notice.</p>
-
       </div>
     </div>
   )
