@@ -7,11 +7,11 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { useDispatch } from 'react-redux';
 import { addToCart } from './features/cartSlice';
 
-function Movie({ title, imageSrc, overview, releaseDate, mediaType, rating, backdrop, name, firstAirDate }) {
+function Movie({ title, moviePoster, imageSrc, overview, releaseDate, mediaType, rating, backdrop, name, firstAirDate }) {
   const dispatch = useDispatch();
   const addToList = () => {
     dispatch(addToCart({
-      item: {title, imageSrc, name, uuid:uuid()}
+      item: {title, moviePoster, name, uuid:uuid()}
     }))
   }
   const [open, setOpen] = useState(false);

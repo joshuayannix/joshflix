@@ -3,7 +3,7 @@ import './MyListItem.css';
 import { useDispatch } from 'react-redux';
 import { removeFromCart } from './features/cartSlice';
 
-function MyListItem({ name, uuid, imageSrc, title }) {
+function MyListItem({ name, uuid, moviePoster, title }) {
 
   const dispatch = useDispatch();
   
@@ -16,7 +16,7 @@ function MyListItem({ name, uuid, imageSrc, title }) {
   return (
     <div className='checkoutProduct'>
 
-      <img className='checkoutProduct__image' src={imageSrc} alt=""/>
+      <img className='checkoutProduct__image' src={moviePoster} alt=""/>
 
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__title">{name ? name : title}</p>

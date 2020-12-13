@@ -8,9 +8,8 @@ import { useSelector } from 'react-redux';
 function MyList() {
   const cart = useSelector(cartRedux);
   const user = useSelector(selectUser);
-  console.log(cart)
   return (
-    <div className='checkout'>
+    <div className='mylist'>
       <div className="checkout__left">
 
 
@@ -18,20 +17,21 @@ function MyList() {
           <div>
             <h2>Your List is empty</h2>
             <p>
-              You have no items in you list.
+              You have no items in your list.
             </p>
           </div>
         ) : (
           <div>
             <h3>Hello, {user?.displayName}</h3>
-            <h2 className='checkout__title'>Shopping Cart</h2>
+            <h2 className='checkout__title'>My List</h2>
             {cart.map(item => (
               <MyListItem 
+                key={item.id}
                 id={item.id}
                 title={item.title}
                 uuid={item.uuid}
                 name={item.name}
-                imageSrc={item.imageSrc}
+                moviePoster={item.moviePoster}
               />
             ))}          
           </div>

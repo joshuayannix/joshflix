@@ -3,7 +3,7 @@ import axios from './axios';
 import './Row.css';
 import Movie from './Movie';
 
-const base_url = 'https://image.tmdb.org/t/p/original/';
+const base_url = 'https://image.tmdb.org/t/p/original';
 
 function Row({ title, fetchUrl, isLargeRow }) {
 
@@ -13,7 +13,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
       setMovies(request.data.results);
-      console.log(request)
       return request;
     }
     fetchData();
@@ -28,6 +27,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             key={movie.id}
             title={movie.title}           
             imageSrc={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+            moviePoster={`${base_url}${movie.poster_path}`}
             overview={movie.overview}
             releaseDate={movie.release_date}
             backdropImage={movie.backdrop_path}

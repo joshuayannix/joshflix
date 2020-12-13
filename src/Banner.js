@@ -16,7 +16,7 @@ function Banner() {
     dispatch(addToCart({
       item: { 
         title: movie.title, 
-        imageSrc: `https://image.tmdb.org/t/p/original${movie.poster_path}`, 
+        moviePoster: `https://image.tmdb.org/t/p/original${movie.poster_path}`, 
         name: movie.name, 
         uuid: uuid()}
     }))
