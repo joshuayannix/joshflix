@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px;
-  height: 30px;
+  height: 68px;
   z-index: 1;
   background: transparent;
   transition-timing-function: ease-in;
   transition: all 0.5s;
+  display: flex;
   
 }
 
@@ -16,4 +16,30 @@
 }
 
 
+.nav__logo {
+  height: 32px;
+  object-fit: contain;
+  margin-left: 30px;
+  margin-top: 20px;
+}
 
+.header__nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+
+.nav__link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav__avatar {
+  margin-right: 10px;
+}
+
+.nav__username {
+  margin-right: 20px;
+}
