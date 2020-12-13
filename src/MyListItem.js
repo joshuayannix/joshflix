@@ -19,7 +19,7 @@ function MyListItem({ name, uuid, imageSrc, title }) {
       <img className='checkoutProduct__image' src={imageSrc} alt=""/>
 
       <div className="checkoutProduct__info">
-        <p className="checkoutProduct__title">{name}</p>
+        <p className="checkoutProduct__title">{name ? name : title}</p>
 
         <button 
           onClick={removeFromCartCheckout}

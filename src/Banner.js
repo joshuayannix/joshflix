@@ -2,11 +2,25 @@ import React, { useState, useEffect } from 'react'
 import axios from './axios';
 import requests from './requests';
 import './Banner.css';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { Icon } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { addToCart } from './features/cartSlice';
+import { v4 as uuid } from 'uuid';
 
 function Banner() {
   const [movie, setMovie] = useState([]);
+  
+  const dispatch = useDispatch();
+  const addToList = () => {
+    dispatch(addToCart({
+      item: { 
+        title: movie.title, 
+        imageSrc: `https://image.tmdb.org/t/p/original${movie.poster_path}`, 
+        name: movie.name, 
+        uuid: uuid()}
+    }))
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -44,14 +58,15 @@ function Banner() {
 
         <div className="banner__buttons">
           
-          <button className="banner__button">
-            <Icon>
-              <PlayArrowIcon/>
+          <button 
+            className="banner__button"
+            onClick={addToList}
+          >
+            <Icon id='add-icon'>
+              <AddCircleIcon/>
             </Icon>
-              Play
-          </button>
-
-          <button className="banner__button">My List</button>
+              Add to My List
+          </button>          
         </div>
           
         <h1 className='banner__description'>

@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 function MyList() {
   const cart = useSelector(cartRedux);
   const user = useSelector(selectUser);
+  console.log(cart)
   return (
     <div className='checkout'>
       <div className="checkout__left">
@@ -15,9 +16,9 @@ function MyList() {
 
         {cart?.length === 0 ? (
           <div>
-            <h2>Your Amazon Cart is empty</h2>
+            <h2>Your List is empty</h2>
             <p>
-              You have no items in you cart. To buy one or more items, click "Add to cart" next to the item.
+              You have no items in you list.
             </p>
           </div>
         ) : (
