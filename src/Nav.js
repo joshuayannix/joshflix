@@ -58,7 +58,7 @@ function Nav() {
         
         <Link 
           to={!user && '/login'} 
-          className={show ? 'nav__link__white' : 'nav__link__black'}
+          className='nav__link__white'
         >
           <div 
             onClick={handleAuthentication}
