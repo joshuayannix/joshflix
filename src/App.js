@@ -9,6 +9,7 @@ import Banner from './Banner';
 import Login from './Login';
 import Nav from './Nav';
 import requests from './requests';
+import MyList from './MyList'
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,11 @@ function App() {
       <div className="App">
         <Switch>
           
+          <Route path='/my-list'>
+            <Nav />
+            <MyList />
+          </Route>
+
           <Route path='/login'>
             <Login />
           </Route>

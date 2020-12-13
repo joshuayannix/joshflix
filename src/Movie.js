@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
 import { Modal } from '@material-ui/core';
+import { v4 as uuid } from 'uuid';
 import './Movie.css';
 import { Icon } from '@material-ui/core';
-import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import { useDispatch } from 'react-redux';
+import { addToCart } from './features/cartSlice';
 
 function Movie({ title, imageSrc, overview, releaseDate, mediaType, rating, backdrop, name, firstAirDate }) {
+  const dispatch = useDispatch();
+  const addToList = () => {
+    dispatch(addToCart({
+      item: {title, imageSrc, name, uuid:uuid()}
+    }))
+  }
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const handleClick = movie => {
-    //console.log(movie)
-
     setOpen(true)
   };
   return (<>
@@ -30,12 +35,16 @@ function Movie({ title, imageSrc, overview, releaseDate, mediaType, rating, back
 
             <div className="movie__modal__buttons">
 
-              <button id='play'><Icon><PlayArrowIcon/></Icon>Play</button>
-
-              <button><Icon><ThumbUpIcon/></Icon></button>
-              
-              <button><Icon><ThumbDownIcon/></Icon></button>              
-              
+              <button 
+                id='add'
+                onClick={addToList}
+              >
+                <Icon id='add-icon'>
+                  <AddCircleIcon />
+                </Icon>
+                Add to My List              
+              </button>                          
+            
             </div>
 
             <div className='movie__modal__description'>
@@ -46,8 +55,6 @@ function Movie({ title, imageSrc, overview, releaseDate, mediaType, rating, back
             </div>
             
           <div className="movie__modal__details__rightColumn">
-            
-
             <div>{overview}</div>
           </div>
 

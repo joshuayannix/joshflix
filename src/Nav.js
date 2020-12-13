@@ -6,11 +6,11 @@ import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import { Link } from 'react-router-dom';
 import { Avatar } from '@material-ui/core';
-
+import { cartRedux } from './features/cartSlice';
 
 function Nav() {
   const user = useSelector(selectUser);
-
+  const list = useSelector(cartRedux);
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
@@ -47,10 +47,17 @@ function Nav() {
       <div className="header__nav">
         {user ? (
           <>
+            <Link 
+              to='/my-list'
+              className='nav__link__white'
+            >
+              <span className='nav__myList'>My List: {list?.length}</span>
+            </Link>
+
             <Avatar           
-          src={user.photo} 
-          className='nav__avatar'
-        /> 
+              src={user.photo} 
+              className='nav__avatar'
+            /> 
           </>
         ) : (
           <div></div>

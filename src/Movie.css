@@ -71,8 +71,9 @@
 }
 
 .movie__modal__title {
-  font-size: 3.3rem;
+  font-size: 2.3rem;
   font-weight: 800;
+  padding: 1rem;
   padding-bottom: 0.3rem;
 }
 
@@ -89,6 +90,7 @@
   flex-direction: row;
   padding-bottom: 50px;
   width: 100%;
+  justify-content: center;
 }
 
 .movie__modal__buttons button{
@@ -119,13 +121,17 @@
   transition: all 0.2s;
 }
 
-#play{
+#add{
   background: white;
-  width: 6rem;
+  width: 10rem;
 }
 
-#play:hover {
+#add:hover {
   color: #000;
   background-color: #e6e6e6;
   transition: all 0.2s;
+}
+
+#add-icon {
+  margin-right: 7px;
 }
