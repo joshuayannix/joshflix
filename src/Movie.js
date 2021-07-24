@@ -14,11 +14,13 @@ function Movie({ title, moviePoster, imageSrc, overview, releaseDate, mediaType,
       item: {title, moviePoster, name, uuid:uuid()}
     }))
   }
+
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const handleClick = movie => {
     setOpen(true)
   };
+  
   return (<>
     <Modal open={open} onClose={handleClose} className='movie__modal'>
       <div className='movie__modal__container'>

@@ -1,5 +1,5 @@
-const API_KEY = 'c94960b3bb8a8100ce74627573c727d1';
-// https://api.themoviedb.org/3/movie/550?api_key=c94960b3bb8a8100ce74627573c727d1
+const API_KEY = process.env.REACT_APP_SECRET_KEY;
+// https://api.themoviedb.org/3/movie/550?api_key= KEY
 
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
